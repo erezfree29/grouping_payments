@@ -1,0 +1,37 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(45,127,186);
+  }
+
+  .welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35vh;
+    color: white;
+  }
+
+  .rotate {
+    animation: rotate 10s infinite;
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .nav_bar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .link {
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+  }
+}
