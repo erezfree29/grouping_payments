@@ -1,17 +1,28 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-@media only screen and (max-width: 600px) {
-  body {
+@font-face {
+  font-family: "CustomFont";
+  src: url("./fonts/Roboto-Regular.ttf");
+
+  }
+
+body {
     background-color: rgb(45,127,186);
+    color: white;
   }
 
   .welcome {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 35vh;
+    margin-top: 25vh;
     color: white;
+  }
+
+  .home_links{
+    display: flex;
+    justify-content: center;
   }
 
   .rotate {
@@ -34,4 +45,33 @@
     color: white;
     text-decoration: none;
   }
-}
+
+  .content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .actions{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  .sign_form{
+    margin-top: 120px;
+  }
+  .must {
+    text-decoration: underline;
+    margin-top: 10px;
+  }
+
+  #user_email,
+  #user_password,
+  #user_password_confirmation{
+    width: 220px;
+    margin-top: 5px;
+  }
+
+  h1,
+  label {
+    font-family: "CustomFont", "Courier New", monospace;
+  }
