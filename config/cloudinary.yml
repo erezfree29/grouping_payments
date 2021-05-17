@@ -1,0 +1,18 @@
+development:
+  cloud_name: erezfriemagor
+  api_key: '238972329927393'
+  api_secret: DusmT6eorK0MPwUVSYTf3roxVaA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: erezfriemagor
+  api_key: '238972329927393'
+  api_secret: DusmT6eorK0MPwUVSYTf3roxVaA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: erezfriemagor
+  api_key: '238972329927393'
+  api_secret: DusmT6eorK0MPwUVSYTf3roxVaA
+  enhance_image_tag: true
+  static_image_support: false

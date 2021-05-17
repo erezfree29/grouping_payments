@@ -33,5 +33,6 @@ class User < ApplicationRecord
             confirmation: true,
             allow_nil: true,
             on: :update
-  
+
+  mount_uploader :photo, PhotoUploader
 end

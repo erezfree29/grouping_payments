@@ -75,3 +75,11 @@ body {
   label {
     font-family: "CustomFont", "Courier New", monospace;
   }
+
+  .avatar {
+    border: solid white 1px;box-shadow: 5px 5px 5px;
+    background-size: 200px;
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+  }
