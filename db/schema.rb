@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_15_152219) do
+ActiveRecord::Schema.define(version: 2021_05_16_152329) do
+
+# Could not dump table "entities" because of following StandardError
+#   Unknown type 'groups' for column 'refrences'
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_groups_on_author_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,4 +36,6 @@ ActiveRecord::Schema.define(version: 2021_05_15_152219) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "entities", "users", column: "author_id"
+  add_foreign_key "groups", "users", column: "author_id"
 end
