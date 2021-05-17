@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_152329) do
+ActiveRecord::Schema.define(version: 2021_05_17_174211) do
 
 # Could not dump table "entities" because of following StandardError
 #   Unknown type 'groups' for column 'refrences'
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_05_16_152329) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "author_id"
+    t.string "icon"
     t.index ["author_id"], name: "index_groups_on_author_id"
   end
 
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_05_16_152329) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
