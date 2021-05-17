@@ -3,7 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
- 
+
+  # associations
+  has_many :created_groups, class_name: 'Group', foreign_key: 'author_id'
+  has_many :created_entities, class_name: 'Entity', foreign_key: 'author_id'
+
   # validations
   validates :email, uniqueness: { message: 'already exists.' }
   validates :name, presence: true
