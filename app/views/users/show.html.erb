@@ -1,7 +1,10 @@
-<div class="avatar" 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="avatar_and_buttons">
+  <div class="avatar" 
 style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_image_path "#{@user.photo}"%>);">
+  </div>
+  <%=button_to 'create a new entity',new_entity_path,method: :get,class:'create_entity w3-button w3-green'%>
 </div>
-
 
 
 

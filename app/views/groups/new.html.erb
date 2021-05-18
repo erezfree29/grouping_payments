@@ -1,0 +1,22 @@
+  
+<br><br>
+<%= simple_form_for(@group) do |f| %>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+
+ 
+    <div class="input photo">upload an icon</div>
+      <%= f.input :icon,:label => false %>
+      <%= f.input :icon_cache, as: :hidden %>
+    <%@group.errors.full_messages_for(:date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+  <div><br>
+    <%= f.submit %>
+  </div>
+<% end %>
