@@ -31,6 +31,7 @@ Rails.application.configure do
   end
 
   # default URL options 
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
@@ -72,7 +73,6 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 end

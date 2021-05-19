@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_165833) do
+ActiveRecord::Schema.define(version: 2021_05_18_221111) do
 
   create_table "entities", force: :cascade do |t|
     t.string "name"
     t.float "amount"
-    t.integer "group_id", null: false
+    t.integer "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_entities_on_author_id"
     t.index ["group_id"], name: "index_entities_on_group_id"
   end
 
@@ -45,5 +47,6 @@ ActiveRecord::Schema.define(version: 2021_05_18_165833) do
   end
 
   add_foreign_key "entities", "groups"
+  add_foreign_key "entities", "users", column: "author_id"
   add_foreign_key "groups", "users", column: "author_id"
 end

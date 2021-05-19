@@ -3,10 +3,11 @@
   <div class="avatar" 
 style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_image_path "#{@user.photo}"%>);">
   </div>
-  <%=button_to 'create a new entity',new_entity_path,method: :get,class:'create_entity w3-button w3-green'%>
+  <%=button_to 'create a new group',new_user_group_path(current_user),method: 
+  :get,class:'create_group w3-button w3-green'%>
+  <%=button_to 'create an external transaction',user_external_entities_path(current_user),method: 
+  :get,class:'create_group w3-button w3-green'%>
 </div>
-
-
 
 
 

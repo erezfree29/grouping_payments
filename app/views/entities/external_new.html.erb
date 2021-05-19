@@ -1,0 +1,23 @@
+<br><br>
+<%=simple_form_for @entity, url: user_external_entities_path(current_user), html: { method: :post } do |f|  %>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name%>
+    <%@entity.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :amout %><br>
+    <%= f.text_field :amount%>
+    <%@entity.errors.full_messages_for(:amount).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+  <div><br>
+    <%= f.submit %>
+  </div>
+<% end %>

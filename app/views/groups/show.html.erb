@@ -1,1 +1,10 @@
 <%= @group.name %>
+<div class="avatar" 
+style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_image_path "#{@group.icon}"%>);">
+  </div>
+<h2>log a transactions</h2>
+<%=button_to 'submit transaction',new_user_group_entity_path(current_user,@group),method: :get%>
+
+
+
+
