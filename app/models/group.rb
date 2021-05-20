@@ -7,4 +7,5 @@ class Group < ApplicationRecord
   validates :name, uniqueness: true
   # picture uploader
   mount_uploader :icon, IconUploader
+  # pagination
 end

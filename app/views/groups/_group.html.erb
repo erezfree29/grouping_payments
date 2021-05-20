@@ -1,24 +1,28 @@
-<div>
-    <div class="group">
-    <div class="company"><%= group.name %></div>
-    <div class="avatar g_avatar" 
-  style="background:linear-gradient(rgba(0,0,0,.35), 
-  rgba(0,0,0,.35)),url(<%=cl_image_path "#{group.icon}"%>);">
+<div class="groups">
+  <div class="group">
+    <a href="/users/{<%=current_user.id%>}/groups/{<%=group.id%>}">
+    <div class="gavatar_name">
+      <div class="company"><%= group.name %></div>
+      <div class="g_avatar" style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_image_path "#{group.icon}"%>);"></div>
+    </a>
+      <%=button_to 'submit transaction',new_user_group_entity_path(current_user,group),method: :get,class: 'sub_tra'%>
     </div>
-    <h4 class="last">last transactions</h4>
-    <%group.entities.last(5).each do |entity|%>
+    <div class="header_table">
+    <h4>last transaction</h4>
       <table class="entity_table">
-      <tr>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Date</th>
-      </tr>
-      <tr>
-        <td><%=entity.name%></td>
-        <td> <%=entity.amount%></td>
-        <td> <%=entity.occured%></td>
-      </tr>
-    </table>
-  <% end %>
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+        <%=render group.entities.last(4)%>
+      </table>
+    </div>
   </div>
 </div>
+
+<%current_user%>
+
+
+

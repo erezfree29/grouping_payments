@@ -18,15 +18,16 @@ class GroupsController < ApplicationController
   end
 
   def show
-    if user_signed_in? && current_user.id == Group.find(params[:id]).author_id
-      @group = Group.find(params[:id])
+    if user_signed_in? && current_user.id == Group.find(params[:id][1..params[:id].length-2]).author_id
+      @group = Group.find(params[:id][1..params[:id].length-2])
+      @entities = @group.entities.paginate(page: params[:page], per_page: 3)
     else
       redirect_to root_path
     end
   end
 
   def index
-    @groups = current_user.created_groups
+    @groups = current_user.created_groups.paginate(page: params[:page],per_page: 3)
   end
 
   private

@@ -1,1 +1,12 @@
-<%= render @entites%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Merchant</th>
+
+    </tr>
+    <%= will_paginate @entites %>
+    <%= render @entites%>
+</table>

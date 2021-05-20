@@ -4,6 +4,19 @@ style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_im
   </div>
 <h2>log a transactions</h2>
 <%=button_to 'submit transaction',new_user_group_entity_path(current_user,@group),method: :get%>
+<%= will_paginate @entities%>
+<table>
+  <tr>
+  <th>Name</th>
+  <th>Amount</th>
+  <th>Date</th>
+  <th>Time</th>
+  <% if current_page?(controller: 'entities', action: 'index') %>
+    <th>Merchant</th>
+  <% end %>  
+  </tr>
+  <%= render @entities%>
+</table>
 
 
 

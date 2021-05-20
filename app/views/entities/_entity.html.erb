@@ -1,21 +1,26 @@
- <table class="entity_table">
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Date</th>
-      <th class="merchant">Merchant</th>
-    </tr>
-    <tr>
-      <td><%=entity.name%></td>
-      <td> <%=entity.amount%></td>
-      <td> <%=entity.occured%></td>
-      <%if entity.group.nil?%>
+<tr>
+  <td><%=entity.name%></td>
+  <td> <%=entity.amount%></td>
+  <td> <%=entity.occured.strftime("%Y-%m-%d")%></td>
+  <td> <%=entity.occured.strftime("%I:%M%p")%></td>
+  <% if current_page?(controller: 'entities', action: 'index') %>
+      <%if !entity.group.nil?%>
         <td><%=entity.group.name%></td>
-      <% end %>
-       <%if entity.group,nil?  %>
-        <td><%=entity.external_group_name%></td>
-      <% end %>   
-    </tr>
-  </table>
+      <% else %>
+         <td><%=entity.external_group_name%></td>
+      <% end %>     
+  <% end %>
+</tr>
+  
+
+
+
+ 
+
+
+
+
+  
+
 
 

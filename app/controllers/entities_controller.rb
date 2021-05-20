@@ -44,9 +44,8 @@ class EntitiesController < ApplicationController
   end
 
   def index
-    @entites = current_user.created_entities
+    @entites = current_user.created_entities.paginate(page: params[:page],per_page: 10)
   end
-
   private
 
   def entity_params
