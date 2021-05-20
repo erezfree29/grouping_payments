@@ -11,11 +11,12 @@ class EntitiesController < ApplicationController
   def create
     @entity = current_user.created_entities.build(entity_params)
     if @entity.save
-        @entity.update(group_id:session[:group_id])
+        @entity.update(group_id:session[:group_id],external:false)
         redirect_to user_group_path(current_user,params[:group_id]), flash: { well_done: 'entity created!' }
     else
-      raise
-      render :new
+      redirect_to new_user_group_entity_path(current_user,params[:group_id]), flash: 
+      {please_review:"#{@entity.errors.full_messages[0]}
+      #{@entity.errors.full_messages[1]} #{@entity.errors.full_messages[2]}"}
     end
   end
 
@@ -33,6 +34,7 @@ class EntitiesController < ApplicationController
 
   def external_create
     @entity = current_user.created_entities.build(external_entity_params)
+    @entity.update(external:true)
     if @entity.save
         redirect_to root_path,  flash: { well_done: 'external entity created!' }
     else
@@ -41,13 +43,18 @@ class EntitiesController < ApplicationController
     end
   end
 
+  def index
+    @entites = current_user.created_entities
+  end
+
   private
 
   def entity_params
-    params.require(:entity).permit(:name,:amount, :group_id)
+    params.require(:entity).permit(:name,:amount, :group_id, :occured)
   end
 
   def external_entity_params
-    params.require(:entity).permit(:name,:amount)
+    params.require(:entity).permit(:name,:amount, :occured, :external_group_name)
   end
+
 end

@@ -44,6 +44,8 @@ gem 'simple_form'
 # for uploading and storing images
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+# pages handling
+gem 'will_paginate', '~> 3.1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

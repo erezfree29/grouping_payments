@@ -1,0 +1,24 @@
+<div>
+    <div class="group">
+    <div class="company"><%= group.name %></div>
+    <div class="avatar g_avatar" 
+  style="background:linear-gradient(rgba(0,0,0,.35), 
+  rgba(0,0,0,.35)),url(<%=cl_image_path "#{group.icon}"%>);">
+    </div>
+    <h4 class="last">last transactions</h4>
+    <%group.entities.last(5).each do |entity|%>
+      <table class="entity_table">
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      <tr>
+        <td><%=entity.name%></td>
+        <td> <%=entity.amount%></td>
+        <td> <%=entity.occured%></td>
+      </tr>
+    </table>
+  <% end %>
+  </div>
+</div>

@@ -1,9 +1,25 @@
 <br><br>
 <%=simple_form_for @entity, url: user_external_entities_path(current_user), html: { method: :post } do |f|  %>
   <div>
+    <%= f.label :merchant %><br>
+    <%= f.text_field :external_group_name%>
+    <%@entity.errors.full_messages_for(:external_group_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
     <%= f.label :name %><br>
     <%= f.text_field :name%>
     <%@entity.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :occured %><br>
+    <%= f.datetime_field :occured%>
+    <%@entity.errors.full_messages_for(:occured).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>

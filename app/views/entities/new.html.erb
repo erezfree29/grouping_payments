@@ -3,17 +3,17 @@
   <div>
     <%= f.label :name %><br>
     <%= f.text_field :name%>
-    <%@entity.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  </div>
+
+
+  <div>
+    <%= f.label :occured %><br>
+    <%= f.datetime_field :occured%>
   </div>
 
   <div>
-    <%= f.label :amout %><br>
+    <%= f.label :amount %><br>
     <%= f.text_field :amount%>
-    <%@entity.errors.full_messages_for(:amount).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
   </div>
   
   <div>

@@ -12,8 +12,8 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to user_group_path(current_user,@group), flash: { well_done: 'group created!' }
     else
-      redirect_to new_user_group_path(current_user), flash: {please_review: "#{@group.errors.full_messages[0]} ,
-      #{@group.errors.full_messages[1]},#{@group.errors.full_messages[2]}" }
+      redirect_to new_user_group_path(current_user), flash: {please_review:"#{@group.errors.full_messages[0]} ,
+      #{@group.errors.full_messages[1]}"}
     end
   end
 
@@ -23,6 +23,10 @@ class GroupsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def index
+    @groups = current_user.created_groups
   end
 
   private
