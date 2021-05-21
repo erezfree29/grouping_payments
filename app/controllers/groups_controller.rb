@@ -18,17 +18,17 @@ class GroupsController < ApplicationController
   end
 
   def show
-      if params[:id].include?('{')
-        group_id = params[:id][1..params[:id].length - 2]
-      else
-        group_id = params[:id]
-      end
-      if user_signed_in? && current_user.id == Group.find(group_id).author_id
-        @group = Group.find(group_id)
-        @entities = @group.entities.paginate(page: params[:page], per_page: 3)
-      else
-        redirect_to root_path
-      end
+    group_id = if params[:id].include?('{')
+                 params[:id][1..params[:id].length - 2]
+               else
+                 params[:id]
+               end
+    if user_signed_in? && current_user.id == Group.find(group_id).author_id
+      @group = Group.find(group_id)
+      @entities = @group.entities.paginate(page: params[:page], per_page: 3)
+    else
+      redirect_to root_path
+    end
   end
 
   def index
@@ -41,5 +41,3 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, :author_id, :icon)
   end
 end
-
-
