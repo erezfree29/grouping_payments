@@ -1,13 +1,14 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
   font-size: 13px;
 }
 
-
-.merchant{
+.merchant {
   width: 120px;
   display: flex;
   justify-content: center;
@@ -20,15 +21,15 @@ table, th, td {
   width: 250px;
 }
 
-.company{
+.company {
   margin-top: 20px;
 }
 
-.sub_tra{
+.sub_tra {
   margin-top: 30px;
 }
 
-.header_table{
+.header_table {
   margin-left: 10px;
 }
 
@@ -37,12 +38,13 @@ table, th, td {
 }
 
 .g_avatar {
-  border: solid white 1px;box-shadow: 5px 5px 5px;
-  width:100px;
+  border: solid white 1px;
+  box-shadow: 5px 5px 5px;
+  width: 100px;
   height: 100px;
   border-radius: 50%;
   position: relative;
-  background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35));
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
   margin-top: 15px;
 }
 
