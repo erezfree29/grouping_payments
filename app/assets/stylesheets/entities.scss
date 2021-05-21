@@ -11,3 +11,76 @@
   color: white;
   background-color: black;
 }
+
+.index_table td{
+  height: 45px;
+  border: none;
+}
+
+.card {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  height:140px;
+  margin-left: 5%;
+  width: 90%;
+  display: flex;
+  position: relative;
+  color: rgb(184,184,187);
+}
+
+.e_avatar{
+  border: solid white 1px;box-shadow: 5px 5px 5px;
+  margin-left: 8px;
+  background-size: 200px;
+  width:100px;
+  height: 85px;
+  margin-top: 30px;
+}
+
+.cards_container {
+  background-color: rgb(241,243,242);
+  width: 100%;
+}
+
+.space {
+  background-color: rgb(241,243,242);
+  height: 20px;
+}
+
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.ename{
+  margin-top: 50px;
+  margin-left: 25px;
+  text-decoration: underline;
+}
+
+.occured {
+  position: absolute;
+  top:73px;
+  left: 183px;
+}
+
+.time{
+  position: absolute;
+  top: 97px;
+  left: 183px;
+}
+
+.eamount {
+  color: black;
+  position: absolute;
+  top: 73px;
+  left: 330px;
+}
+
+.rectangle {
+  width: 100px;
+}

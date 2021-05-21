@@ -3,7 +3,7 @@
     <a href="/users/{<%=current_user.id%>}/groups/{<%=group.id%>}">
     <div class="gavatar_name">
       <div class="company"><%= group.name %></div>
-      <div class="g_avatar" style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_image_path "#{group.icon}"%>);"></div>
+      <div class="g_avatar"><img src="<%=group.icon%>"></div>
     </a>
       <%=button_to 'submit transaction',new_user_group_entity_path(current_user,group),method: :get,class: 'sub_tra'%>
     </div>
