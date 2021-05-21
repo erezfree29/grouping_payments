@@ -1,4 +1,3 @@
-# rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/ModuleLength, Metrics/MethodLength
 class GroupsController < ApplicationController
   def new
     if user_signed_in?
@@ -44,4 +43,3 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, :author_id, :icon)
   end
 end
-# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity,  Metrics/ModuleLength, Metrics/MethodLength

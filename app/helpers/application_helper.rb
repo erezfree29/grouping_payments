@@ -1,4 +1,3 @@
-# rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/ModuleLength, Metrics/MethodLength
 module ApplicationHelper
   def nav_bar
     content_tag(:div, class: 'nav_bar') do
@@ -32,4 +31,3 @@ module ApplicationHelper
     end
   end
 end
-# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity,  Metrics/ModuleLength, Metrics/MethodLength
