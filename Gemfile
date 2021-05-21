@@ -38,12 +38,12 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # helps manage rails console
 gem 'hirb', '~> 0.7.3'
 # tag helper for rails helpers
-gem 'record_tag_helper', '~> 1.0'
 gem 'devise', '~> 4.2'
+gem 'record_tag_helper', '~> 1.0'
 gem 'simple_form'
 # for uploading and storing images
-gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
 # pages handling
 gem 'will_paginate', '~> 3.1.0'
 group :development, :test do
@@ -60,10 +60,10 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
   gem 'guard'
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'rack-livereload'
+  gem 'spring'
 end
 
 group :test do
@@ -77,5 +77,3 @@ end
 group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
-
-

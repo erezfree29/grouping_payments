@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :except => [:home]
+  before_action :authenticate_user!, except: [:home]
   def home
-      if user_signed_in?
-        redirect_to user_path(current_user)
-      end
+    redirect_to user_path(current_user) if user_signed_in?
   end
 
   def show
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 end

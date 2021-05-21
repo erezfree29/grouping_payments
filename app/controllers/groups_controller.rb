@@ -10,41 +10,36 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.created_groups.build(group_params)
     if @group.save
-      redirect_to user_group_path(current_user,@group), flash: { well_done: 'group created!' }
+      redirect_to user_group_path(current_user, @group), flash: { well_done: 'group created!' }
     else
-      redirect_to new_user_group_path(current_user), flash: {please_review:"#{@group.errors.full_messages[0]} ,
-      #{@group.errors.full_messages[1]}"}
+      redirect_to new_user_group_path(current_user), flash: { please_review: "#{@group.errors.full_messages[0]} ,
+      #{@group.errors.full_messages[1]}" }
     end
   end
 
   def show
-    if params[:id].include?("{")
-      if user_signed_in? && current_user.id == Group.find(params[:id][1..params[:id].length-2]).author_id
-        @group = Group.find(params[:id][1..params[:id].length-2])
+    if params[:id].include?('{')
+      if user_signed_in? && current_user.id == Group.find(params[:id][1..params[:id].length - 2]).author_id
+        @group = Group.find(params[:id][1..params[:id].length - 2])
         @entities = @group.entities.paginate(page: params[:page], per_page: 3)
       else
         redirect_to root_path
       end
+    elsif user_signed_in? && current_user.id == Group.find(params[:id]).author_id
+      @group = Group.find(params[:id])
+      @entities = @group.entities.paginate(page: params[:page], per_page: 3)
     else
-      if user_signed_in? && current_user.id == Group.find(params[:id]).author_id
-        @group = Group.find(params[:id])
-        @entities = @group.entities.paginate(page: params[:page], per_page: 3)
-      else
-        redirect_to root_path
-      end
+      redirect_to root_path
     end
   end
 
   def index
-    @groups = current_user.created_groups.paginate(page: params[:page],per_page: 3)
+    @groups = current_user.created_groups.paginate(page: params[:page], per_page: 3)
   end
 
   private
 
   def group_params
-    params.require(:group).permit(:name,:author_id, :icon)
+    params.require(:group).permit(:name, :author_id, :icon)
   end
 end
-
-
-
