@@ -50,6 +50,12 @@ To test the models run
 To Test the Feature run
 rspec spec/feature/*.*
 
+###about the project 
+https://www.loom.com/share/74da241d36fd421cb282bb74f23bda5f
+
+###live link
+https://groupingapper.herokuapp.com/
+
  👤 **Erez Friemagor**
  
 [<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/erezfree29)
