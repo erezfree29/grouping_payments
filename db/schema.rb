@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2021_05_25_030339) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "entity_id", null: false
-    t.datetime "time"
     t.string "repeat"
     t.index ["entity_id"], name: "index_recuring_entities_on_entity_id"
   end
