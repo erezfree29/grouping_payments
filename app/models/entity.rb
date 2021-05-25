@@ -1,5 +1,5 @@
 class Entity < ApplicationRecord
-  belongs_to :created_entities
+  belongs_to :created_entities, optional: true
   belongs_to :group, optional: true
   has_one :recuring_entity
   validates :name, :amount, :occured, :author_id, presence: true
