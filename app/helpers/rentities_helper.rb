@@ -1,0 +1,2 @@
+module RentitiesHelper
+end

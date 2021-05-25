@@ -2,7 +2,18 @@
   <td><%=entity.name%></td>
   <td> <%=entity.amount%></td>
   <td> <%=entity.occured.strftime("%Y-%m-%d")%></td>
-  <td> <%=entity.occured.strftime("%I:%M%p")%></td>
+  <td> <%=entity.occured.strftime("%I:%M%p")%>
+  <% if  RecuringEntity.all.pluck(:entity_id).include?(entity.id) %>
+    <%= link_to("  to be repeat #{RecuringEntity.where(entity_id:entity.id)[0].repeat}".html_safe,
+    user_group_entity_recuring_entity_path(current_user.id,entity.group.id,entity.id,
+    RecuringEntity.all.pluck(:entity_id)[0]), :method => :delete, :class => 
+    "recurring" ,data: { confirm: "delete scheduled"}) %> 
+  <% else %>
+      <%= link_to("schedule".html_safe,
+     new_user_group_entity_recuring_entity_path(current_user.id,entity.group.id,entity.id), :method => :get, :class => 
+    "recurring") %> 
+  <% end%>
+  </td>
   <% if current_page?(controller: 'entities', action: 'index') %>
       <%if !entity.group.nil?%>
         <td><%=entity.group.name%></td>
@@ -12,11 +23,6 @@
   <% end %>
 </tr>
   
-
-
- 
-
-
 
 
   

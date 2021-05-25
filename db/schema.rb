@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_205920) do
+ActiveRecord::Schema.define(version: 2021_05_25_030339) do
 
   create_table "entities", force: :cascade do |t|
     t.string "name"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2021_05_19_205920) do
     t.index ["author_id"], name: "index_groups_on_author_id"
   end
 
+  create_table "recuring_entities", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "entity_id", null: false
+    t.datetime "time"
+    t.string "repeat"
+    t.index ["entity_id"], name: "index_recuring_entities_on_entity_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,4 +61,5 @@ ActiveRecord::Schema.define(version: 2021_05_19_205920) do
   add_foreign_key "entities", "groups"
   add_foreign_key "entities", "users", column: "author_id"
   add_foreign_key "groups", "users", column: "author_id"
+  add_foreign_key "recuring_entities", "entities"
 end

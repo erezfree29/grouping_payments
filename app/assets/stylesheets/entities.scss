@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .entity_table tr:nth-child(even) {
   background-color: green;
+  position: relative;
 }
 
 .entity_table tr:nth-child(odd) {

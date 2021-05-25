@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'all_entities', to: 'entities#index'
   # groups
   resources :groups, only: [:new, :create, :show, :index] do
-  resources :entities, only: [:new, :create, :show]
+    resources :entities, only: [:new, :create, :show] do 
+    resources :recuring_entities, only: [:new, :create, :destroy], controller: 'rentities'
+    end
   end
  end
 end
