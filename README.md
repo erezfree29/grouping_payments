@@ -50,10 +50,10 @@ To test the models run
 To Test the Feature run
 rspec spec/feature/*.*
 
-###about the project 
+### Video preview
 https://www.loom.com/share/74da241d36fd421cb282bb74f23bda5f
 
-###live link
+### Live link
 https://groupingapper.herokuapp.com/
 
  👤 **Erez Friemagor**
