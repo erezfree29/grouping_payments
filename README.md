@@ -2,13 +2,18 @@
 
 #### The app will enable users to monitor their payments.
 
-User can-Sign up, Sign in, Sign out(device gem used, Cloudinary gem used, Picture stored in Cloudinary server)
-User can create a Group while uploading a logo(Cloudinary gem used, Picture stored in Cloudinary server)
-Users can log transactions for any group created.
-User can view all groups(groups index) , where last for transactions for each group is shown(using will_paginate gem)
-User can view each group and all its transactions(using will_paginate gem)
-User can log an external one-off transaction
-User can view all submitted transaction(using will_paginate gem)
+-User can-Sign up, Sign in, Sign out(device gem used, Cloudinary gem used, Picture stored in Cloudinary server)
+-User can create a Group while uploading a logo(Cloudinary gem used, Picture stored in Cloudinary server)
+-Users can log transactions for any group created.
+-User can view all groups(groups index) , where last for transactions for each group is shown(using will_paginate gem)
+-User can view each group and all its transactions(using will_paginate gem)
+-User can log an external one-off transaction
+-User can view all submitted transaction(using will_paginate gem)
+
+##Extra feature
+-User can set up a transaction/entity to be defined a recurring transaction 
+-A recurring_entity will be created with an entity_id attribute which links to the entity_id
+-A repeat attrubute will describe how often the entity/transaction needs to be repeated 
 
 
 ## Built with
@@ -34,9 +39,16 @@ In order to run the the project on your local machine, please run the following 
 > 2. run `cd grouping_payments`
 > 3. Run bundle install to get the necesary gems.
 > 4. Run yarn install.
-> 5. Run rails db:migrate.
-> 6.Run Rails S
-> 7.Open your browser and navigate to http://localhost:3000/
+> 5. Run rails db:create.
+> 6. Run rails db:migrate.
+> 7.Run Rails S
+> 8.Open your browser and navigate to http://localhost:3000/
+
+### Run tests
+To test the models run
+-rspec spec/models/*.*
+To Test the Feature run
+rspec spec/feature/*.*
 
  👤 **Erez Friemagor**
  
