@@ -25,6 +25,9 @@
 - VScode
 - Lots of love :heart:
 
+## Design
+Design idea by Gregoire Vella on Behance
+
 ## Getting Started
 
 ### Prerequisites
