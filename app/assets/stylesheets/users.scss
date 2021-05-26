@@ -1,15 +1,9 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-@font-face {
-  font-family: "CustomFont";
-  src: url("./fonts/Roboto-Regular.ttf");
-  font-family: "ThinFont";
-  src: url("./fonts/Roboto-Thin.ttf");
-}
 
 body {
-  background-color: rgb(45, 127, 186);
+  background-color: rgb(26,72,121);
   color: white;
 }
 
@@ -74,11 +68,6 @@ body {
 #user_password_confirmation {
   width: 220px;
   margin-top: 5px;
-}
-
-h1,
-label {
-  font-family: "CustomFont", "Courier New", monospace;
 }
 
 .set_font {

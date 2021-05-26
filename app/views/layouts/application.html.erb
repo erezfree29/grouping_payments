@@ -14,8 +14,9 @@
     <%=nav_bar%>
       <main class="main">
       <%- flash.each do |name, message| %>
-        <p><i><%= "#{name}: #{message}" %></i></p>
+        <p><i class="green"><%= "#{message}"%></i></p>
       <% end %>
     <%= yield %>
+    </main>
   </body>
 </html>
