@@ -25,6 +25,9 @@
 - VScode
 - Lots of love :heart:
 
+## Design
+Design idea by Gregoire Vella on Behance
+
 ## Getting Started
 
 ### Prerequisites
@@ -49,6 +52,12 @@ To test the models run
 -rspec spec/models/*.*
 To Test the Feature run
 rspec spec/feature/*.*
+
+### Video preview
+https://www.loom.com/share/74da241d36fd421cb282bb74f23bda5f
+
+### Live link
+https://groupingapper.herokuapp.com/
 
  👤 **Erez Friemagor**
  
