@@ -59,6 +59,48 @@ https://www.loom.com/share/74da241d36fd421cb282bb74f23bda5f
 ### Live link
 https://groupingapper.herokuapp.com/
 
+### The n plus one problem and how it was dealt with in this project
+
+The n plus one problem occurs when we are calling the Database every time we retrieve data.
+
+This occurs when objects we retrieved have a relationship with another model/table and we would like to retrieve a piece of information many times over for example.
+
+when we have a relationship between build and branch
+
+builds = Build.order(:finished_at).limit(10)
+
+builds.each do |build|
+  puts "#{build.branch.name} build number #{build.number}"
+end
+
+The above code will result in calling the Database, as every time we retrieve the data we will need to recall the branches table 
+
+The solution is to include the branches table once when the builds variable is created.
+
+builds = Build.order(:finished_at).includes(:branches).limit(10)
+
+builds.each do |build|
+  puts "#{build.branch.name} build number #{build.number}"
+end
+
+now that we already have the information needed inside the builds variable displaying it will not result in additional queries and this will
+save us processing time.
+
+-In this project 
+
+We have a relationship between Entity and the group.
+
+First, we render the @entities in the index action of the entities controller 
+
+Then we render the @entites in the view
+
+Then we display the entity's group in the partial by accessing entity,group in order to prevent that from resulting in an additional SQL query 
+
+I have included the group in the controller while declaring the @entites variable 
+
+@entites = current_user.created_entities.paginate(page: params[:page], per_page: 5).includes(:group)
+
+
  👤 **Erez Friemagor**
  
 [<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/erezfree29)
