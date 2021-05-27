@@ -52,6 +52,8 @@ To test the models run
 
 \"-rspec spec/models/*.*"\
 
+\*our-new-project\* to \*our-old-project\*
+
 To Test the Feature run
 \"rspec spec/feature/*.*"\
 
