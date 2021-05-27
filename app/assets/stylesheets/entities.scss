@@ -98,6 +98,7 @@
 .ancient {
   color: white;
   margin-left: 10px;
+  font-size: 15px;
 }
 
 #entity_name,
@@ -111,4 +112,14 @@
   border-left: none;
   border-right: none;
   background-color: #d3d3d3;
+}
+
+.entity_breakdown {
+  height: 1h;
+  background-color: rgb(26, 72, 121);
+  display: flex;
+}
+
+.entity_links{
+  margin-left: 100px;
 }
