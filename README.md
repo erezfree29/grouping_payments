@@ -50,9 +50,9 @@ In order to run the the project on your local machine, please run the following 
 ### Run tests
 To test the models run
 
-\"-rspec spec/models/*.*"\
+\-rspec spec/models/*.*\
 
-\*our-new-project\* to \*our-old-project\*
+\-rspec spec/models/\*.*
 
 To Test the Feature run
 \"rspec spec/feature/*.*"\
