@@ -1,0 +1,15 @@
+  <%@recent_entities.each do |entity|%>
+    <div class="card">
+      <%if !entity.group.nil?%>
+        <div class="align"><img src=" <%=entity.group.icon%>" class="rectangle"></div>
+      <% else %>
+        <div class="align rectangle"><%=entity.external_group_name%></div>
+      <% end %>
+      <div class="ename"><%=entity.name%></div>
+      <div class="occured"><%=entity.occured.strftime("%Y-%m-%d")%></div>
+      <div class="time"><%=entity.occured.strftime("%I:%M%p")%></div>
+      <div class="eamount">$<%=entity.amount%></div>
+    </div>
+    <div class="space"></div>
+  <%end %>
+</div>

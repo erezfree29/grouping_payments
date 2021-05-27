@@ -5,7 +5,7 @@
       <div class="company"><%= group.name %></div>
       <div class="g_avatar"><img src="<%=group.icon%>"></div>
     </a>
-      <%=button_to 'submit transaction',new_user_group_entity_path(current_user,group),method: :get,class: 'sub_tra'%>
+      <%=button_to 'submit transaction',new_user_group_entity_path(current_user,group),method: :get,class: 'sub_tra "btn btn-success'%>
     </div>
     <div class="header_table">
     <h4>last transaction</h4>
@@ -23,6 +23,4 @@
 </div>
 
 <%current_user%>
-
-
 

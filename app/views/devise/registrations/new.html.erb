@@ -1,37 +1,45 @@
+<div class="register">
+  <%= link_to 'javascript:history.back()' do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+  REGISTER
+   <%= link_to 'javascript:history.back()' do %>
+    Next
+  <% end %>
+</div>
 <div class="content">
   <div class="sign_form">
-    <h1>Sign up</h1>
-
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-
-      <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      <div class="upload">
+        <div class="uavatar avleft"><%=image_tag("profile.jfif")%></div>
+        <div class="up">Upload picture</div>
       </div>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="input photo">upload a photo</div>
-        <%= f.label :photo %><br />
+      <div class="input photo">upload a photo
          <%= f.input :photo,:label => false %>
          <%= f.input :photo_cache, as: :hidden %>
-
+    </div>
+      
       <div class="field">
-        <%= f.label :password %><br>
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" ,placeholder: "Full name"%>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,placeholder: "email"%>
+      </div>
+
+    
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password",placeholder: "password" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder: "password confirmation" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Submit" %>
+        <%= f.submit "Submit",class:"btn btn-success"%>
       </div>
         <em>
           <div class="must">password must</div>
@@ -43,3 +51,5 @@
     <% end %>
   </div>
 </div>
+<style>
+

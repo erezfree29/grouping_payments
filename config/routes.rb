@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
  root to: 'users#home'
+ post 'recent_entities', to: 'entities#recent'
+ post 'ancient_entities', to: 'entities#ancient'
  resources :users do 
   # external entites
   get 'external_entities', to: 'entities#external_new'

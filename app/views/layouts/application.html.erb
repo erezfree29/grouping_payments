@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+  integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%=nav_bar%>
-      <main class="main">
-      <%- flash.each do |name, message| %>
-        <p><i class="green"><%= "#{message}"%></i></p>
-      <% end %>
-    <%= yield %>
+      <main class="main <%= controller_name %>_body action_<%= action_name %>">
+      
+          <%= flash_messages %>
+          <%= yield %>
     </main>
   </body>
 </html>

@@ -1,21 +1,5 @@
-<div class="header_table">
-      <h4>transactions</h4>
-      <table class="entity_table">
-        <tr>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Time</th>
-        </tr>
-        <%entites = group.entities.paginate(page: params[:page],per_page: 3)%>
-        <%=will_paginate entites%>
-        <%entites.each do |entity|%>
-          <tr>
-            <td><%=entity.name%></td>
-            <td> <%=entity.amount%></td>
-            <td> <%=entity.occured.strftime("%Y-%m-%d")%></td>
-            <td> <%=entity.occured.strftime("%I:%M%p")%></td>
-          </tr>
-        <% end %>
-      </table>
-    </div>
+<div class="input photo">upload a photo
+        <%= f.label :photo %><br />
+         <%= f.input :photo,:label => false %>
+         <%= f.input :photo_cache, as: :hidden %>
+</div>

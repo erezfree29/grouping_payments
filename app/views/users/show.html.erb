@@ -1,15 +1,25 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
-  integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 <div class="avatar_and_buttons">
   <div class="avatar"><img src="<%=current_user.photo%>"></div>
   <div class="user_name set_font"><%=current_user.name%></div>
-  <i class="fas fa-registered fa-3x"></i><div><%=link_to 'see your merchants',user_groups_path(current_user),class:'create_group set_font'%></div><hr class="line">
-  <i class="fas fa-plus-square fa-3x"></i><div><%=link_to 'add a merchant',new_user_group_path(current_user),class:'create_group set_font'%></div><hr class="line">
-  <i class="fas fa-binoculars fa-3x"></i><div><%=link_to 'view your transactions',user_all_entities_path(current_user),class:'create_group set_font'%></div><hr class="line">
-  <i class="far fa-money-bill-alt fa-3x"></i><div><%=link_to 'add a stand alone transaction',user_external_entities_path(current_user),class:'create_group set_font'%></div><hr class="line">
+  <div class="line_contain">
+    <div class="circle"><i class="fas fa-registered fa-2x"></i></div>
+    <div><%=link_to 'see your merchants',user_groups_path(current_user),class:'create_group set_font'%></div>
+  </div>
+  <hr class="line">
+   <div class="line_contain">
+      <div class="circle"><i class="fas fa-plus-square fa-2x"></i></div>
+      <div><%=link_to 'add a merchant',new_user_group_path(current_user),class:'create_group set_font'%></div>
+   </div>
+   <hr class="line">
+    <div class="line_contain">
+       <div class="circle"><i class="fas fa-binoculars fa-2x"></i></div>
+       <div><%=link_to 'view your transactions',user_all_entities_path(current_user),class:'create_group set_font'%></div>
+    </div>
+    <hr class="line">
+     <div class="line_contain">
+      <div class="circle"><i class="far fa-money-bill-alt fa-2x"></i></div>
+      <div><%=link_to 'add a stand alone transaction',user_external_entities_path(current_user),class:'create_group set_font'%></div>
+     </div>
+     <hr class="line">
 </div>
-
-
-
-
