@@ -1,9 +1,12 @@
-
+<div class="register">
+  <i class="fas fa-bars"></i>
+  GROUPS
+  <i class="fas fa-search"></i>
+</div>
 <br><br>
  <%=simple_form_for @group, url: user_groups_path(current_user), html: { method: :post } do |f|  %>
   <div>
-    <%= f.label :name %><br>
-    <%= f.text_field :name%>
+    <%= f.text_field :name ,placeholder: "Name"%>
   </div>
   <div>
     <div class="input photo">upload an icon</div>

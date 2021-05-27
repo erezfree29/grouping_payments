@@ -89,12 +89,6 @@
   width: 100px;
 }
 
-#entity_occured,
-#entity_name,
-#entity_amount {
-  background-color: #d3d3d3;
-}
-
 .most {
   color: white;
   margin-left: 120px;
@@ -104,4 +98,17 @@
 .ancient {
   color: white;
   margin-left: 10px;
+}
+
+#entity_name,
+#entity_occured,
+#entity_amount,
+#user_password_confirmation,
+#entity_external_group_name {
+  width: 340px;
+  margin-top: 5px;
+  border-style: ridge;
+  border-left: none;
+  border-right: none;
+  background-color: #d3d3d3;
 }

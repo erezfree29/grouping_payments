@@ -1,16 +1,19 @@
+ <div class="register">
+  <i class="fas fa-bars"></i>
+  TRANSACTIONS
+  <i class="fas fa-search"></i>
+</div>
 <br><br>
 <%=simple_form_for @entity, url: user_external_entities_path(current_user), html: { method: :post } do |f|  %>
   <div>
-    <%= f.label :merchant %><br>
-    <%= f.text_field :external_group_name%>
+    <%= f.text_field :external_group_name,placeholder:'Merchant'%>
     <%@entity.errors.full_messages_for(:external_group_name).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= f.label :name %><br>
-    <%= f.text_field :name%>
+    <%= f.text_field :name,placeholder:'Item'%>
     <%@entity.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -25,8 +28,7 @@
   </div>
 
   <div>
-    <%= f.label :amout %><br>
-    <%= f.text_field :amount%>
+    <%= f.text_field :amount,placeholder:'Amount'%>
     <%@entity.errors.full_messages_for(:amount).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -34,6 +36,6 @@
   
   <div>
   <div><br>
-    <%= f.submit %>
+    <%= f.submit "Submit",class:"btn btn-success"%>
   </div>
 <% end %>

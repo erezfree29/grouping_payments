@@ -1,5 +1,0 @@
-<div class="input photo">upload a photo
-        <%= f.label :photo %><br />
-         <%= f.input :photo,:label => false %>
-         <%= f.input :photo_cache, as: :hidden %>
-</div>

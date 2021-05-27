@@ -90,3 +90,13 @@ body {
 .circles {
   display: flex;
 }
+
+.entities_body {
+  background-color: white;
+  height: 100vh;
+}
+
+.groups_body {
+  background-color: white;
+  height: 100vh;
+}

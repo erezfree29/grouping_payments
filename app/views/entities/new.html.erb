@@ -1,19 +1,21 @@
+ <div class="register">
+  <i class="fas fa-bars"></i>
+  TRANSACTIONS
+  <i class="fas fa-search"></i>
+</div>
  <br><br>
 <%=simple_form_for @entity, url: user_group_entities_path(current_user,params[:group_id]), html: { method: :post } do |f|  %>
   <div>
-    <%= f.label :name %><br>
-    <%= f.text_field :name%>
+    <%= f.text_field :name,placeholder:'name'%>
   </div>
 
 
   <div>
-    <%= f.label :occured %><br>
-    <%= f.datetime_field :occured%>
+    <%= f.datetime_field :occured,placeholder:'occured'%>
   </div>
 
   <div>
-    <%= f.label :amount %><br>
-    <%= f.text_field :amount%>
+    <%= f.text_field :amount,placeholder:'amount'%>
   </div>
   
   <div>
