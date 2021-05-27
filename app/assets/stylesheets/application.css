@@ -14,18 +14,16 @@
  *= require_self
  */
 
- @font-face {
+@font-face {
   font-family: "Proxima_nova_bold";
   src: url("./fonts/FontsFree-Net-Proxima-Nova-Bold.otf");
   font-family: "Proxima_nova_light";
   src: url("./fonts/FontsFree-Net-Proxima-Nova-Light.otf");
 }
 
-
 .profiler-result {
   display: none;
 }
-
 
 h1,
 h2,
@@ -39,7 +37,7 @@ body {
 }
 
 .alert {
-  background-color:#5fb523;
+  background-color: #5fb523;
   width: 100px;
   border-radius: 50%;
   display: flex;
@@ -57,25 +55,24 @@ body {
   color: gray;
 }
 
-
 .nav_bar {
   display: flex;
 }
 
 .register {
   height: 10vh;
-  background-color: rgb(26,72,121);
+  background-color: rgb(26, 72, 121);
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 35px;
 }
 
-.avleft{
+.avleft {
   margin-left: -10px;
 }
 
-.upload{
+.upload {
   display: flex;
   align-items: center;
 }
