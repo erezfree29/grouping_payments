@@ -80,3 +80,13 @@ body {
 .up {
   margin-left: 20px;
 }
+
+.links,
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.circles {
+  display: flex;
+}
