@@ -50,12 +50,11 @@ In order to run the the project on your local machine, please run the following 
 ### Run tests
 To test the models run
 
-\-rspec spec/models/*.*\
-
 \-rspec spec/models/\*.*
 
 To Test the Feature run
-\"rspec spec/feature/*.*"\
+
+\-rspec spec/feature/\*.*
 
 ### Video preview
 https://www.loom.com/share/74da241d36fd421cb282bb74f23bda5f
