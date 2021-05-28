@@ -45,14 +45,14 @@ class EntitiesController < ApplicationController
 
   def index
     @entites = current_user.created_entities.paginate(page: params[:page], per_page: 5).includes(:group)
-    @recent_entities = @entites.last(1)
-    @ancient_entites = @entites.first(1)
+    @recent_entities = @entites.last(3)
+    @ancient_entites = @entites.first(3)
   end
 
   def recent
     @entites = current_user.created_entities.paginate(page: params[:page], per_page: 5).includes(:group)
-    @recent_entities = @entites.last(1)
-    @ancient_entites = @entites.first(1)
+    @recent_entities = @entites.last(3)
+    @ancient_entites = @entites.first(3)
     render template: 'entities/recent'
   end
 
