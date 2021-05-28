@@ -44,8 +44,8 @@ class EntitiesController < ApplicationController
   end
 
   def index
-    @entities = current_user.created_entities.paginate(page: params[:page], per_page: 5).
-    order("created_at DESC").includes(:group)
+    @entities = current_user.created_entities.paginate(page: params[:page], per_page: 5)
+      .order('created_at DESC').includes(:group)
     @num_pages = (@entities.count / 5) + 1
   end
 
@@ -59,6 +59,3 @@ class EntitiesController < ApplicationController
     params.require(:entity).permit(:name, :amount, :occured, :external_group_name)
   end
 end
-
-
-
