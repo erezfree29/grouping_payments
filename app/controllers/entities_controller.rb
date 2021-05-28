@@ -44,23 +44,9 @@ class EntitiesController < ApplicationController
   end
 
   def index
-    @entites = current_user.created_entities.paginate(page: params[:page], per_page: 5).includes(:group)
-    @recent_entities = @entites.last(3)
-    @ancient_entites = @entites.first(3)
-  end
-
-  def recent
-    @entites = current_user.created_entities.paginate(page: params[:page], per_page: 5).includes(:group)
-    @recent_entities = @entites.last(3)
-    @ancient_entites = @entites.first(3)
-    render template: 'entities/recent'
-  end
-
-  def ancient
-    @entites = current_user.created_entities.paginate(page: params[:page], per_page: 5).includes(:group)
-    @recent_entities = @entites.last(1)
-    @ancient_entites = @entites.first(1)
-    render template: 'entities/ancient'
+    @entities = current_user.created_entities.paginate(page: params[:page], per_page: 5).
+    order("created_at DESC").includes(:group)
+    @num_pages = (@entities.count / 5) + 1
   end
 
   private
@@ -73,3 +59,6 @@ class EntitiesController < ApplicationController
     params.require(:entity).permit(:name, :amount, :occured, :external_group_name)
   end
 end
+
+
+

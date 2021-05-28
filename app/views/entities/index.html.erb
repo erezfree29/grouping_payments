@@ -1,20 +1,16 @@
-<%= will_paginate @entites %>
+<%= will_paginate @entites, :container => false %>
 <div class="register">
   <i class="fas fa-bars"></i>
   TRANSACTIONS
   <i class="fas fa-search"></i>
 </div>
- <div class="entity_breakdown">
-  <div class="entity_links">
-    <%= link_to "Most recent", recent_entities_path, method: :post,class:'most' %>
-    <%= link_to "Most ancient", ancient_entities_path, method: :post,class:'ancient' %>
-  </div>
-  </div>
+<div class="breakdown">
+    <div class="recent"><a href="/users/<%= current_user.id%>/all_entities?page=1">Recent Transactions</a></div>
+    <a href="/users/<%= current_user.id%>/all_entities?page=<%=@num_pages%>">Ancient Transactions</a>
+</div>    
   <div class="cards_container">
-    <%= render 'recent_entites'%>
+    <%= render 'entites'%>
    </div>
   
 
-
-
-         
+ 
