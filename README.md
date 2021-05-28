@@ -57,7 +57,7 @@ To Test the Feature run
 \-rspec spec/feature/\*.*
 
 ### Video preview
-https://www.loom.com/share/74da241d36fd421cb282bb74f23bda5f
+https://www.loom.com/share/e177ffbec38a4b3a9d61325745672bad
 
 ### Live link
 https://groupingapper.herokuapp.com/
