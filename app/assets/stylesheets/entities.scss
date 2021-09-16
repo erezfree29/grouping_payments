@@ -1,0 +1,139 @@
+// Place all the styles related to the entities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.entity_table tr:nth-child(even) {
+  background-color: green;
+  position: relative;
+}
+
+.entity_table tr:nth-child(odd) {
+  background-color: green;
+}
+
+.entity_table th {
+  color: white;
+  background-color: black;
+}
+
+.index_table td {
+  height: 45px;
+  border: none;
+}
+
+.card {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  height: 140px;
+  margin-left: 5%;
+  width: 90%;
+  display: flex;
+  position: relative;
+  color: rgb(184, 184, 187);
+}
+
+.e_avatar {
+  border: solid white 1px;
+  box-shadow: 5px 5px 5px;
+  margin-left: 8px;
+  background-size: 200px;
+  width: 100px;
+  height: 85px;
+  margin-top: 30px;
+}
+
+.cards_container {
+  background-color: rgb(241, 243, 242);
+  width: 100%;
+}
+
+.space {
+  background-color: rgb(241, 243, 242);
+  height: 20px;
+}
+
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.ename {
+  margin-top: 50px;
+  margin-left: 25px;
+  text-decoration: underline;
+}
+
+.occured {
+  position: absolute;
+  top: 73px;
+  left: 183px;
+}
+
+.time {
+  position: absolute;
+  top: 97px;
+  left: 183px;
+}
+
+.eamount {
+  color: black;
+  position: absolute;
+  top: 73px;
+  left: 330px;
+}
+
+.rectangle {
+  width: 100px;
+}
+
+.most {
+  color: white;
+  margin-left: 120px;
+  font-size: 15px;
+}
+
+.ancient {
+  color: white;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+#entity_name,
+#entity_occured,
+#entity_amount,
+#user_password_confirmation,
+#entity_external_group_name {
+  width: 340px;
+  margin-top: 5px;
+  border-style: ridge;
+  border-left: none;
+  border-right: none;
+  background-color: #d3d3d3;
+}
+
+.entity_breakdown {
+  height: 2.5vh;
+  background-color: rgb(26, 72, 121);
+  display: flex;
+}
+
+.entity_links {
+  margin-left: 100px;
+}
+
+.breakdown {
+  display: flex;
+}
+
+.breakdown a {
+  color: white;
+  font-size: 15px;
+}
+
+.recent {
+  margin-left: 100px;
+  margin-right: 20px;
+}

@@ -1,0 +1,26 @@
+<div class="groups">
+  <div class="group">
+    <a href="/users/{<%=current_user.id%>}/groups/{<%=group.id%>}">
+    <div class="gavatar_name">
+      <div class="company"><%= group.name %></div>
+      <div class="g_avatar"><img src="<%=group.icon%>"></div>
+    </a>
+      <%=button_to 'submit transaction',new_user_group_entity_path(current_user,group),method: :get,class: 'sub_tra "btn btn-success'%>
+    </div>
+    <div class="header_table">
+    <h4>last transaction</h4>
+      <table class="entity_table">
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Times</th>
+        </tr>
+        <%=render group.entities.last(4)%>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%current_user%>
+

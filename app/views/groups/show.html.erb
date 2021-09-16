@@ -1,0 +1,28 @@
+<div class="register">
+  <i class="fas fa-bars"></i>
+  GROUPS
+  <i class="fas fa-search"></i>
+</div>
+<%= @group.name %>
+<div class="avatar" 
+style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_image_path "#{@group.icon}"%>);">
+  </div>
+<h2>log a transactions</h2>
+<%=button_to 'submit transaction',new_user_group_entity_path(current_user,@group),method: :get,class: "btn btn-success"%>
+<%= will_paginate @entities%>
+<table class="entity_table">
+  <tr>
+  <th>Name</th>
+  <th>Amount</th>
+  <th>Date</th>
+  <th>Time</th>
+  <% if current_page?(controller: 'entities', action: 'index') %>
+    <th>Merchant</th>
+  <% end %>  
+  </tr>
+  <%= render @entities%>
+</table>
+
+
+
+

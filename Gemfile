@@ -4,9 +4,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
+gem 'whenever', require: false
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -24,13 +30,26 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+# respec gem for testing
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
+# helps manage rails console
+gem 'hirb', '~> 0.7.3'
+# tag helper for rails helpers
+gem 'devise', '~> 4.2'
+gem 'record_tag_helper', '~> 1.0'
+gem 'simple_form'
+# for uploading and storing images
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
+# pages handling
+gem 'twitter-bootstrap-rails'
+gem 'will_paginate', '~> 3.1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -41,9 +60,10 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.4', require: false
+  gem 'rack-livereload'
   gem 'spring'
-  # for rubocop linters tests
-  gem 'rubocop-rails', require: false
 end
 
 group :test do
@@ -54,5 +74,6 @@ group :test do
   gem 'webdrivers'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+group :assets do
+  gem 'uglifier', '>= 1.0.3'
+end
