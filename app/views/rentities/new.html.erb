@@ -1,0 +1,16 @@
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <br><br>
+<%=simple_form_for @recurring_entity, url:user_group_entity_recuring_entities_path(current_user,params[:group_id],params[:entity_id]), html: { method: :post } do |f|  %>
+   
+   <div class="field">
+    <%= f.label :repeat%><br>
+    <%= f.select :repeat, [ 'Monthly', 'Weekly'], :prompt => 'duration' %>
+  </div>
+  <div>
+  </div>
+  
+  <div>
+  <div><br>
+     <%= f.submit 'Secedule', class: '"w3-button w3-green' %>
+  </div>
+<% end %>

@@ -13,3 +13,90 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+  font-family: "Proxima_nova_bold";
+  src: url("./fonts/FontsFree-Net-Proxima-Nova-Bold.otf");
+  font-family: "Proxima_nova_light";
+  src: url("./fonts/FontsFree-Net-Proxima-Nova-Light.otf");
+}
+
+.profiler-result {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Proxima_nova_bold", "Courier New", monospace;
+}
+
+body {
+  font-family: "Proxima_nova_light", "Courier New", monospace;
+}
+
+.alert {
+  background-color: #5fb523;
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registrations_body {
+  background-color: white;
+  height: 100vh;
+}
+
+.sign_form {
+  width: 80%;
+  color: gray;
+}
+
+.nav_bar {
+  display: flex;
+}
+
+.register {
+  height: 10vh;
+  background-color: rgb(26, 72, 121);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 35px;
+}
+
+.avleft {
+  margin-left: -10px;
+}
+
+.upload {
+  display: flex;
+  align-items: center;
+}
+
+.up {
+  margin-left: 20px;
+}
+
+.links,
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.circles {
+  display: flex;
+}
+
+.entities_body {
+  background-color: white;
+  height: 0;
+}
+
+.groups_body {
+  background-color: white;
+  height: 100vh;
+}
